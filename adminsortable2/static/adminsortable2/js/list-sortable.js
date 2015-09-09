@@ -1,20 +1,22 @@
 "use strict";
-
-jQuery.extend({
-	getQueryParams: function() {
-		var vars = [], hash, i;
-		var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
-		for (i = 0; i < hashes.length; i++) {
-			hash = hashes[i].split('=');
-			vars.push(hash[0]);
-			vars[hash[0]] = hash[1];
+jQuery(function(){
+	jQuery.extend({
+		getQueryParams: function() {
+			var vars = [], hash, i;
+			var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+			for (i = 0; i < hashes.length; i++) {
+				hash = hashes[i].split('=');
+				vars.push(hash[0]);
+				vars[hash[0]] = hash[1];
+			}
+			return vars;
+		},
+		getQueryParam: function(name) {
+			return jQuery.getQueryParams()[name];
 		}
-		return vars;
-	},
-	getQueryParam: function(name) {
-		return jQuery.getQueryParams()[name];
-	}
+	});
 });
+
 
 // make list view sortable
 jQuery(function($) {
