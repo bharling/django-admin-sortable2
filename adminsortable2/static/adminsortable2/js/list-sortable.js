@@ -1,5 +1,5 @@
 "use strict";
-jQuery(function(){
+jQuery(function($){
 	jQuery.extend({
 		getQueryParams: function() {
 			var vars = [], hash, i;
